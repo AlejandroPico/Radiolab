@@ -34,7 +34,8 @@ export function Spectrum({ radio, onTune, lab=false }: { radio: RadioState; onTu
         const y=yFor(db);ctx.strokeStyle=grid;ctx.beginPath();ctx.moveTo(left,y);ctx.lineTo(right,y);ctx.stroke();ctx.fillStyle=text;ctx.fillText(`${db}`,left-9,y+3);
       }
       const center=r[r.active]+r.offset;
-      for(let i=0;i<=6;i++) { const x=left+i/6*plotWidth;ctx.strokeStyle=grid;ctx.beginPath();ctx.moveTo(x,top);ctx.lineTo(x,bottom);ctx.stroke();ctx.fillStyle=text;ctx.textAlign='center';ctx.fillText(((center-r.span/2+i/6*r.span)/1e6).toFixed(3),x,height-7); }
+      const divisions=plotWidth<450?3:6;
+      for(let i=0;i<=divisions;i++) { const x=left+i/divisions*plotWidth;ctx.strokeStyle=grid;ctx.beginPath();ctx.moveTo(x,top);ctx.lineTo(x,bottom);ctx.stroke();ctx.fillStyle=text;ctx.textAlign=i===0?'left':i===divisions?'right':'center';ctx.fillText(((center-r.span/2+i/divisions*r.span)/1e6).toFixed(3),x,height-7); }
       const [lo,hi]=passband(r);
       const xFor=(f:number)=>left+((f-center)/r.span+.5)*plotWidth;
       const bx=xFor(r[r.active]+lo),ex=xFor(r[r.active]+hi);

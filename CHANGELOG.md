@@ -1,5 +1,9 @@
 # Registro de cambios
 
+## 0.2.1 — 2026-11-09
+
+Eje de frecuencias adaptable al ancho del espectro para evitar etiquetas solapadas en móvil. Rediseño 0.2 verificado en escritorio y móvil: paneles plegables, cierre con atrás, temas y Acerca de.
+
 ## 0.2.0 — 2026-11-09
 
 Rediseño de la interfaz tomando como referencia EnRuta (TMB) y El País (Pais). Barra izquierda permanente de iconos, ampliable desde el favicon; panel derecho oculto con escenarios, cadena de recepción, memorias e historial plegables. Radio a toda la superficie disponible, sin cabecera, pie, eslóganes ni rótulos repetidos de demostración. Estado de la fuente concentrado en el menú expandido y Ajustes; las exportaciones conservan la identificación sintética. Temas mañana, tarde, noche OLED y automático; migración de preferencias anteriores. Acerca de con favicon, descripción, autor, versión y enlaces.

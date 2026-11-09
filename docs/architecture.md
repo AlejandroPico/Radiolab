@@ -1,4 +1,4 @@
-# Arquitectura · v0.2.0
+# Arquitectura · v0.2.1
 
 Radiolab es una SPA estática React/TypeScript/Vite sin servidor, claves ni hardware obligatorio. `App` coordina estado y navegación hash; las vistas y modelos están separados.
 

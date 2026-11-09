@@ -32,5 +32,5 @@ export interface Contact {
 }
 export interface Memory { id: string; name: string; frequency: number; mode: Mode }
 export type Theme = 'morning' | 'afternoon' | 'night' | 'auto';
-export const VERSION = '0.2.0';
+export const VERSION = '0.2.1';
 

@@ -1,4 +1,4 @@
-# Validación v0.2.0
+# Validación v0.2.1
 
 ## Comprobación reproducible
 

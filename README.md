@@ -1,12 +1,12 @@
 # Radiolab · Estación de radio experimental
 
-**v0.2.0** · Español de España · Por Alejandro Pico
+**v0.2.1** · Español de España · Por Alejandro Pico
 
 [Abrir Radiolab](https://alejandropico.github.io/Radiolab/) · [Portfolio](https://alejandropico.github.io/Portfolio/) · [Arquitectura](docs/architecture.md)
 
 Receptor de radio con VFO, instrumentación de señales y libro de guardia local. Interfaz de pantalla completa con dos barras laterales. Aplicación estática React + TypeScript + Vite, instalable como PWA y publicada en GitHub Pages mediante Actions.
 
-## Interfaz 0.2.0
+## Interfaz 0.2.1
 
 Barra izquierda de iconos, ampliable al pulsar el favicon de Radiolab. Ajustes, temas y Acerca de están al final. El panel derecho está oculto al iniciar y se abre desde su pestaña lateral; contiene escenarios, cadena de recepción, memorias e historial, todos plegables. La radio ocupa el espacio central completo, sin cabecera, pie ni frases de adorno. El estado del modo demo aparece en el menú expandido y en Ajustes, donde permanece activado mientras no exista otra fuente. Las exportaciones siguen identificando los datos sintéticos.
 
@@ -68,7 +68,7 @@ Una nueva compilación genera un identificador de caché por contenido. El worke
 
 ## Modos y limitaciones
 
-| Origen/capacidad | Estado v0.2.0 |
+| Origen/capacidad | Estado v0.2.1 |
 | --- | --- |
 | DEMO sintética y audio original | Operativa |
 | RX real en páginas externas | Enlaces, sujeto al operador |
