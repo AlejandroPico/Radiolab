@@ -1,6 +1,6 @@
 # Hardware opcional
 
-La versión 0.1.1 no necesita ni controla hardware. No hay que comprar nada para utilizarla.
+La versión 0.1.2 no necesita ni controla hardware. No hay que comprar nada para utilizarla.
 
 ## Próxima integración de recepción
 

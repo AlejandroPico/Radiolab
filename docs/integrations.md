@@ -2,7 +2,7 @@
 
 La única fuente implementada es `DemoSource`. No se pide ninguna API key.
 
-| Servicio | Acceso v0.1.1 | Condición |
+| Servicio | Acceso v0.1.2 | Condición |
 | --- | --- | --- |
 | [WebSDR](https://www.websdr.org/) | Enlace a directorio | Uso en la interfaz del operador |
 | [KiwiSDR](https://rx.kiwisdr.com/) | Enlace a directorio | Disponibilidad y permisos de cada receptor |

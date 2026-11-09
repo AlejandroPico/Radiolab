@@ -1,6 +1,6 @@
 # Radiolab · Estación de radio experimental
 
-**v0.1.1** · Español de España · Por Alejandro Pico
+**v0.1.2** · Español de España · Por Alejandro Pico
 
 [Abrir Radiolab](https://alejandropico.github.io/Radiolab/) · [Portfolio](https://alejandropico.github.io/Portfolio/) · [Arquitectura](docs/architecture.md)
 
@@ -11,6 +11,7 @@ Una estación de radio para explorar las señales sin necesitar una antena. Inte
 - **Estación clásica y laboratorio:** VFO A/B, copia del VFO activo, representación split con TX bloqueado, frecuencia editable en Hz/kHz/MHz, pasos de 1 Hz a 100 kHz, bandas de ejemplo, dial por arrastre, rueda o teclado, exploración ±12 kHz y memorias con nombre.
 - **Cinco escenarios originales:** portadora AM, banda lateral inferior, dos emisoras AM separadas 4 kHz, Morse CQ y ruido determinista. Las señales permanecen en frecuencias absolutas; alejarse de ellas reduce la señal recibida.
 - **Instrumentos:** espectro analítico sintético de 768 bins, waterfall, cursor de frecuencia, ventana de filtro, zoom 12–96 kHz, desplazamiento, escala, S-meter simulado y osciloscopio del audio generado. No se calculan mediciones de RF real ni se inventa telemetría de hardware.
+- **Banco de análisis del laboratorio:** metadatos de fuente, banda de paso absoluta, espaciado de bins y captura/exportación CSV de trazas sintéticas, con tiempo de simulación y origen explícitos.
 - **Audio:** tonos PCM originales con Web Audio, activación explícita, volumen, ganancia AF, mute, squelch, pausa y AGC ilustrativo. El reloj de simulación es común al Morse, al espectro y al audio. La síntesis sonora es didáctica; FM/NFM usan tonos de prueba y no un demodulador FM de RF.
 - **Libro de guardia:** alta, edición, borrado con confirmación, búsqueda, UTC, indicativo, frecuencia, banda derivada, modo, reporte, notas, origen DEMO/manual, confirmación y coordenadas opcionales. Importación/exportación JSON y CSV, validación atómica y protección de fórmulas CSV.
 - **Mapa esquemático:** ubicaciones introducidas manualmente, zoom, desplazamiento, selección y rutas de círculo máximo cuando hay origen y destino válidos. El origen se usa solo en la sesión; no se infiere ninguna ubicación por indicativo. Los ejemplos ficticios se cargan por elección del usuario.
@@ -61,7 +62,7 @@ Una nueva compilación genera un identificador de caché por contenido. El worke
 
 ## Modos y limitaciones
 
-| Origen/capacidad | Estado v0.1.1 |
+| Origen/capacidad | Estado v0.1.2 |
 | --- | --- |
 | DEMO sintética y audio original | Operativa |
 | RX real en páginas externas | Enlaces, sujeto al operador |

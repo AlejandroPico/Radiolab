@@ -1,6 +1,6 @@
 # Alcance de Radiolab
 
-La v0.1.1 es una aplicación **RX/DEMO**: genera señales y sonido localmente, sin emisión RF, endpoint TX, PTT operativo ni control de un equipo físico. Los modos de audio y el espectro no habilitan radiocomunicaciones.
+La v0.1.2 es una aplicación **RX/DEMO**: genera señales y sonido localmente, sin emisión RF, endpoint TX, PTT operativo ni control de un equipo físico. Los modos de audio y el espectro no habilitan radiocomunicaciones.
 
 Las bandas del selector son ejemplos didácticos. No son una lista de frecuencias autorizadas para un usuario ni una atribución de servicios. Las anotaciones manuales no verifican licencia, actividad real ni autorización. Los ejemplos DEMO no son contactos reales.
 
