@@ -1,0 +1,9 @@
+import { VERSION } from '../core/types.ts';
+import { Icon } from '../components/Icon.tsx';
+export function About(){return <div className="about-content">
+  <div className="about-brand"><img src={`${import.meta.env.BASE_URL}favicon.svg`} alt="" width="58" height="58"/><div><h3>Radiolab</h3><span>Estación de radio</span></div></div>
+  <p className="about-description">Receptor con sintonía VFO, análisis de señales, memorias y libro de guardia.</p>
+  <dl className="project-meta"><div><dt>Autor</dt><dd>Alejandro Pico</dd></div><div><dt>Versión</dt><dd>{VERSION}</dd></div><div><dt>Proyecto</dt><dd>Personal · no comercial</dd></div></dl>
+  <nav className="about-links" aria-label="Enlaces del proyecto"><a href="https://alejandropico.github.io/Portfolio/" target="_blank" rel="noopener noreferrer">Portfolio <Icon name="external" size={16}/></a><a href="https://github.com/AlejandroPico/Radiolab" target="_blank" rel="noopener noreferrer">Repositorio <Icon name="external" size={16}/></a></nav>
+  <details className="about-details"><summary>Datos, fuentes y licencias <Icon name="chevron" size={14}/></summary><p>Las señales y el audio se generan localmente; la fuente actual se indica en el menú y en Ajustes. La recepción SDR directa y el control de equipos están pendientes. No existe transmisión RF habilitada.</p><p>Preferencias, memorias y contactos se guardan en el navegador. Sin cuentas ni analítica. Exporta el libro para conservar una copia.</p><p>React y Vite: MIT. TypeScript: Apache-2.0. Diseño, gráficos, iconos y síntesis sonora del proyecto. Los servicios externos tienen sus propias condiciones.</p><a href="https://github.com/AlejandroPico/Radiolab/blob/main/docs/architecture.md" target="_blank" rel="noopener noreferrer">Documentación <Icon name="external" size={14}/></a></details>
+</div>;}

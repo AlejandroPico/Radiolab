@@ -1,5 +1,6 @@
 import { defaultRadio, clampFrequency } from './radio.ts';
 import { validateContacts } from './logbook.ts';
+import { migrateTheme } from './theme.ts';
 import type { RadioState, Memory, Contact, Theme } from './types.ts';
 export interface StoredState { schema: 1; radio: RadioState; memories: Memory[]; contacts: Contact[]; theme: Theme; history: number[] }
 export const STORAGE_KEY = 'radiolab.state';
@@ -8,7 +9,7 @@ export function defaults(): StoredState {
     { id:'m-am', name:'Portadora · 20 m', frequency:14200000, mode:'AM' },
     { id:'m-ssb', name:'Banda lateral · 40 m', frequency:7100000, mode:'LSB' },
     { id:'m-cw', name:'Morse · 40 m', frequency:7030000, mode:'CW' },
-  ], contacts: [], theme:'dark', history:[] };
+  ], contacts: [], theme:'auto', history:[] };
 }
 export function decodeState(raw: string | null): StoredState {
   const fresh = defaults();
@@ -37,7 +38,7 @@ export function decodeState(raw: string | null): StoredState {
     }
     if (Array.isArray(data.memories)) fresh.memories = data.memories.filter(m => m && typeof m.name === 'string' && m.name.length <= 60 && typeof m.id === 'string' && Number.isFinite(m.frequency) && ['AM','FM','NFM','USB','LSB','CW'].includes(m.mode)).slice(0,100).map(m=>({...m,frequency:clampFrequency(m.frequency)}));
     if (data.contacts) fresh.contacts = validateContacts(data.contacts);
-    if (data.theme && ['dark','light','auto'].includes(data.theme)) fresh.theme = data.theme;
+    if (data.theme) fresh.theme = migrateTheme(data.theme);
     if (Array.isArray(data.history)) fresh.history = data.history.filter(x=>typeof x === 'number' && Number.isFinite(x)).slice(0,12).map(clampFrequency);
     return fresh;
   } catch { return fresh; }

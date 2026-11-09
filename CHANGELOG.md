@@ -1,5 +1,9 @@
 # Registro de cambios
 
+## 0.2.0 — 2026-11-09
+
+Rediseño de la interfaz tomando como referencia EnRuta (TMB) y El País (Pais). Barra izquierda permanente de iconos, ampliable desde el favicon; panel derecho oculto con escenarios, cadena de recepción, memorias e historial plegables. Radio a toda la superficie disponible, sin cabecera, pie, eslóganes ni rótulos repetidos de demostración. Estado de la fuente concentrado en el menú expandido y Ajustes; las exportaciones conservan la identificación sintética. Temas mañana, tarde, noche OLED y automático; migración de preferencias anteriores. Acerca de con favicon, descripción, autor, versión y enlaces.
+
 ## 0.1.2 — 2026-11-09
 
 Etiqueta accesible del tema en español y enlace «Saltar al contenido» que conserva la sección activa. Última revisión de la interfaz publicada en escritorio, móvil vertical y móvil horizontal. Banco de análisis del laboratorio con metadatos, captura de traza sintética y exportación CSV.

@@ -1,0 +1,14 @@
+import type { Memory, RadioState, ScenarioId } from '../core/types.ts';
+import { formatFrequency, scenarios } from '../core/radio.ts';
+import { Icon } from '../components/Icon.tsx';
+import { Range } from './Receiver.tsx';
+interface Props {radio:RadioState;patch:(p:Partial<RadioState>)=>void;scenario:(id:ScenarioId)=>void;memories:Memory[];history:number[];saveMemory:()=>void;removeMemory:(id:string)=>void;tune:(n:number)=>void;close:()=>void}
+export function ReceiverTools(p:Props){
+  const r=p.radio,scene=scenarios.find(s=>s.id===r.scenario)!;
+  return <><header className="tools-header"><h2>Controles</h2><button className="icon-button" aria-label="Cerrar panel de controles" onClick={p.close}><Icon name="close"/></button></header><div className="tools-content">
+    <details className="tool-group"><summary>Escenarios de señal <Icon name="chevron" size={15}/></summary><div className="scenario-list">{scenarios.map(s=><button key={s.id} className={r.scenario===s.id?'chosen':''} aria-pressed={r.scenario===s.id} onClick={()=>p.scenario(s.id)}><span>{s.name}<small>{s.mode} · {(s.frequency/1e6).toFixed(3)} MHz</small></span>{r.scenario===s.id&&<Icon name="check" size={15}/>}</button>)}</div><p className="scenario-description">{scene.description}</p></details>
+    <details className="tool-group"><summary>Cadena de recepción <Icon name="chevron" size={15}/></summary><div className="chain-controls"><Range label="Filtro de audio" value={r.filter} min={100} max={15000} step={100} unit=" Hz" onChange={filter=>p.patch({filter})}/><Range label="Silenciamiento" value={r.squelch} min={-120} max={-30} unit=" dBm" onChange={squelch=>p.patch({squelch})}/><label className="setting-row"><span>AGC</span><input type="checkbox" checked={r.agc} onChange={e=>p.patch({agc:e.target.checked})}/></label></div></details>
+    <details className="tool-group"><summary>Memorias <span className="group-count">{p.memories.length}</span><Icon name="chevron" size={15}/></summary><div className="memories-list">{p.memories.map(m=><div className="memory-row" key={m.id}><button onClick={()=>{p.tune(m.frequency);p.patch({mode:m.mode,offset:0});}}><span><strong>{formatFrequency(m.frequency)} <small>MHz</small></strong><small>{m.name} · {m.mode}</small></span></button><button className="icon-button" aria-label={'Eliminar memoria '+m.name} onClick={()=>p.removeMemory(m.id)}><Icon name="close" size={14}/></button></div>)}<button className="add-memory" onClick={p.saveMemory}><Icon name="plus" size={15}/> Guardar frecuencia actual</button></div></details>
+    <details className="tool-group"><summary>Historial de sintonía <Icon name="chevron" size={15}/></summary><div className="history-list">{p.history.length===0?<p>Sin frecuencias anteriores.</p>:p.history.map(f=><button key={f} onClick={()=>p.tune(f)}>{formatFrequency(f)} MHz <Icon name="arrow" size={14}/></button>)}</div></details>
+  </div></>;
+}

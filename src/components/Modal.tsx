@@ -16,7 +16,7 @@ export function Modal({ title, onClose, children }: { title: string; onClose: ()
     };
   }, [onClose]);
   return <dialog ref={dialog} className="modal" onCancel={e => { e.preventDefault(); onClose(); }} onClick={e => { if (e.target === e.currentTarget) { const r = e.currentTarget.getBoundingClientRect(); if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) onClose(); } }}>
-    <header><div><span className="eyebrow">RADIOLAB / ESTACIÓN EXPERIMENTAL</span><h2>{title}</h2></div><button className="icon-button" aria-label="Cerrar panel" onClick={onClose}><Icon name="close"/></button></header>
+    <header><h2>{title}</h2><button className="icon-button" aria-label="Cerrar panel" onClick={onClose}><Icon name="close"/></button></header>
     {children}
   </dialog>;
 }

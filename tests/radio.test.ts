@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { defaultRadio, parseFrequency, clampFrequency, TransmitInterlock, MockController, telemetry } from '../src/core/radio.ts';
 import { DemoSource, sampleAudio, envelope, signalLevel, cwGate } from '../src/adapters/demo.ts';
 import { decodeState } from '../src/core/storage.ts';
+import { effectiveTheme } from '../src/core/theme.ts';
 test('Frecuencia: unidades, coma decimal, límites y entradas inválidas',()=>{
   assert.equal(parseFrequency('14,200100','MHz'),14200100);assert.equal(parseFrequency('7100','kHz'),7100000);assert.equal(parseFrequency('7030000','Hz'),7030000);
   for(const text of ['','NaN','Infinity','-2','0','1400'])assert.throws(()=>parseFrequency(text,'MHz'));
@@ -33,4 +34,10 @@ test('Persistencia: recupera valores corruptos y migra esquemas desconocidos a v
   assert.deepEqual(decodeState('{'),decodeState(null));assert.deepEqual(decodeState('{"schema":999}'),decodeState(null));
   const state=decodeState(JSON.stringify({schema:1,radio:{...defaultRadio,volume:999,mode:'INVALID',scenario:'404',a:-1}}));
   assert.equal(state.radio.volume,100);assert.equal(state.radio.mode,'AM');assert.equal(state.radio.scenario,'am');assert.equal(state.radio.a,100000);
+  assert.equal(decodeState(JSON.stringify({schema:1,theme:'dark'})).theme,'night');
+  assert.equal(decodeState(JSON.stringify({schema:1,theme:'light'})).theme,'morning');
+});
+test('Tema automático: límites horarios locales y selección manual independiente de la hora',()=>{
+  for(const [hour,expected] of [[5,'night'],[6,'morning'],[12,'morning'],[13,'afternoon'],[19,'afternoon'],[20,'night']] as const)assert.equal(effectiveTheme('auto',new Date(2026,10,9,hour)),expected);
+  assert.equal(effectiveTheme('night',new Date(2026,10,9,9)),'night');
 });

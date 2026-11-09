@@ -1,4 +1,4 @@
-# Arquitectura · v0.1.2
+# Arquitectura · v0.2.0
 
 Radiolab es una SPA estática React/TypeScript/Vite sin servidor, claves ni hardware obligatorio. `App` coordina estado y navegación hash; las vistas y modelos están separados.
 
@@ -32,7 +32,7 @@ El espectro de 768 bins es una envolvente analítica, **no una transformada FFT 
 - Hash para navegación robusta en Pages; sin servidor de rutas.
 - `localStorage` para una V1 pequeña; no implica sincronización entre dispositivos. La importación es atómica y no hay datos DEMO de contactos sin elección del usuario.
 - Mapas originales esquemáticos para evitar dependencias de teselas, claves, geolocalización o peticiones externas.
-- Tema automático por preferencia del sistema. La extensión solar necesita consentimiento de geolocalización y no está implementada.
+- Tema automático por hora local del dispositivo. La extensión solar necesita consentimiento de geolocalización y no está implementada.
 - Menú y diálogos añaden una entrada temporal al historial: atrás cierra el panel superior. Los diálogos usan foco modal nativo.
 - Frames limitados aproximadamente a 25 fps; reducción de movimiento reduce la tasa del espectro. El procesamiento PCM no depende del render React. Canvas y timers se limpian al desmontar.
 - No hay API de analítica ni llamadas a SDR externos. Todos los iconos y sonidos del proyecto son propios.
