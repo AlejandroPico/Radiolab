@@ -32,4 +32,5 @@ export interface Contact {
 }
 export interface Memory { id: string; name: string; frequency: number; mode: Mode }
 export type Theme = 'dark' | 'light' | 'auto';
-export const VERSION = '0.1.0';
+export const VERSION = '0.1.1';
+

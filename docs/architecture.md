@@ -1,4 +1,4 @@
-# Arquitectura · v0.1.0
+# Arquitectura · v0.1.1
 
 Radiolab es una SPA estática React/TypeScript/Vite sin servidor, claves ni hardware obligatorio. `App` coordina estado y navegación hash; las vistas y modelos están separados.
 
@@ -44,3 +44,4 @@ El espectro de 768 bins es una envolvente analítica, **no una transformada FFT 
 3. SDRplay según licencia/API; control Hamlib/CAT mediante backend local, sin publicar puertos al Internet abierto.
 4. DAB+ con decodificador libre y estudio de sus licencias de distribución.
 5. Si procede, diseño independiente de autenticación, roles e interbloqueos para operación de equipo físico. TX no se activa por editar una preferencia del navegador.
+

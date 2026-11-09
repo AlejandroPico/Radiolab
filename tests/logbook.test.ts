@@ -8,7 +8,7 @@ test('CSV conserva comas, comillas, saltos de línea y protege fórmulas',()=>{
 });
 test('JSON rechaza esquemas, tipos, fechas y coordenadas no válidos sin importar parcialmente',()=>{
   assert.deepEqual(importContacts(JSON.stringify({schema:1,contacts:demoContacts}),false),demoContacts);
-  for(const patch of [{frequency:0},{lat:91},{lat:1,lon:null},{mode:'TX'},{origin:'real'},{utc:'nonsense'},{confirmed:'true'}])assert.throws(()=>validateContact({...demoContacts[0],...patch}));
+  for(const patch of [{frequency:0},{lat:91},{lat:1,lon:null},{mode:'TX'},{origin:'real'},{utc:'nonsense'},{utc:'2026-02-30T12:00:00Z'},{confirmed:'true'}])assert.throws(()=>validateContact({...demoContacts[0],...patch}));
   assert.throws(()=>importContacts('{"schema":2,"contacts":[]}',false));
   assert.throws(()=>importContacts(JSON.stringify([demoContacts[0],{...demoContacts[1],lat:200}]),false));
   assert.throws(()=>fromCSV('bad,header\n1,2'));assert.throws(()=>fromCSV(toCSV(demoContacts)+'\n"unclosed'));

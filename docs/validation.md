@@ -1,4 +1,4 @@
-# Validación v0.1.0
+# Validación v0.1.1
 
 ## Comprobación reproducible
 
@@ -34,3 +34,4 @@ La comprobación del build valida todos los recursos precacheados, ruta de subdi
 ## Pruebas manuales de recepción física pendientes
 
 Ninguna compatibilidad SDR, CAT, audio físico, medida de potencia o DAB+ se considera probada. La instalación Android/iOS real, los gestos del sistema en el dispositivo y la calibración de hardware requieren pruebas posteriores en esos medios. Las validaciones de viewport en escritorio no equivalen a un teléfono físico.
+

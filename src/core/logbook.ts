@@ -10,7 +10,7 @@ export function validateContact(value: unknown): Contact {
     return (v[key] as string).trim();
   };
   const id = str('id', 100), callsign = str('callsign', 40).toUpperCase(), utc = str('utc', 40);
-  if (!id || !callsign || !/^\d{4}-\d\d-\d\dT\d\d:\d\d/.test(utc) || !Number.isFinite(Date.parse(utc))) throw new Error('Fecha, identificador o indicativo no válido.');
+  if (!id || !callsign || !/^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.\d{1,3})?Z$/.test(utc) || !Number.isFinite(Date.parse(utc)) || new Date(utc).toISOString().slice(0,19)!==utc.slice(0,19)) throw new Error('Fecha UTC, identificador o indicativo no válido.');
   if (typeof v.frequency !== 'number' || !Number.isFinite(v.frequency) || v.frequency < MIN_FREQUENCY || v.frequency > MAX_FREQUENCY) throw new Error('Frecuencia fuera de rango.');
   if (!modes.includes(v.mode as Mode)) throw new Error('Modo no compatible.');
   const coord = (key: string, max: number) => {

@@ -1,6 +1,6 @@
 # Radiolab · Estación de radio experimental
 
-**v0.1.0** · Español de España · Por Alejandro Pico
+**v0.1.1** · Español de España · Por Alejandro Pico
 
 [Abrir Radiolab](https://alejandropico.github.io/Radiolab/) · [Portfolio](https://alejandropico.github.io/Portfolio/) · [Arquitectura](docs/architecture.md)
 
@@ -61,7 +61,7 @@ Una nueva compilación genera un identificador de caché por contenido. El worke
 
 ## Modos y limitaciones
 
-| Origen/capacidad | Estado v0.1.0 |
+| Origen/capacidad | Estado v0.1.1 |
 | --- | --- |
 | DEMO sintética y audio original | Operativa |
 | RX real en páginas externas | Enlaces, sujeto al operador |
@@ -88,3 +88,4 @@ Toda la información de estación queda en `localStorage` bajo `radiolab.state`,
 - [Cambios](CHANGELOG.md) · [Dependencias y licencias](THIRD_PARTY_NOTICES.md)
 
 Siguiente fase: puente Windows de solo recepción con RTL-SDR, validación con muestras I/Q reales y decodificador adecuado; después CAT/Hamlib y DAB+. TX queda fuera de esta versión y requiere un diseño, permisos y comprobaciones independientes.
+

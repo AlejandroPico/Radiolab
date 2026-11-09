@@ -1,6 +1,6 @@
 # Hardware opcional
 
-La versión 0.1.0 no necesita ni controla hardware. No hay que comprar nada para utilizarla.
+La versión 0.1.1 no necesita ni controla hardware. No hay que comprar nada para utilizarla.
 
 ## Próxima integración de recepción
 
@@ -17,3 +17,4 @@ Hamlib (`rigctld`) sería un componente de control local, nunca un puerto expues
 Antes de cualquier modificación hay que identificar PX-888/PX-888K, variante VHF/UHF, batería y estado. El cable de programación específico debe comprobarse contra el pinout del modelo, sin asumir que cualquier cable sirve. Un cable de memorias no convierte el walkie en SDR ni garantiza control CAT en directo.
 
 Las memorias «Dragón 1–6» se conservarán: primero leer y guardar una copia, sin sobrescribir ajustes. Radiolab no las lee, programa ni utiliza para transmitir. Tampoco debe deducirse que sus frecuencias tengan autorización de uso. La conexión de audio requiere adaptación de niveles y aislamiento; no hay un circuito de conexión de audio implementado en este proyecto.
+
